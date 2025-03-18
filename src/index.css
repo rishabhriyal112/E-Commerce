@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Styles */
+@layer base {
+  :root {
+    --color-primary: #3b82f6;
+    --color-primary-dark: #2563eb;
+    --color-secondary: #f59e0b;
+    --color-secondary-dark: #d97706;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-800 font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+}
+
+@layer components {
+  .input {
+    @apply px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary;
+  }
+  
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition duration-300 inline-flex items-center justify-center;
+  }
+  
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white;
+  }
+  
+  .btn-secondary {
+    @apply bg-white border border-gray-300 text-gray-700 hover:bg-gray-50;
+  }
+  
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden;
+  }
+  
+  .badge {
+    @apply px-2 py-1 text-xs font-medium rounded-full;
+  }
+  
+  .badge-discount {
+    @apply bg-red-100 text-red-800;
+  }
+  
+  .badge-new {
+    @apply bg-green-100 text-green-800;
+  }
+  
+  .badge-sold-out {
+    @apply bg-gray-100 text-gray-800;
+  }
+}
+
+/* Rating Stars */
+.rating-stars {
+  @apply flex items-center;
+}
+
+.rating-stars .star {
+  @apply w-4 h-4 text-gray-300;
+}
+
+.rating-stars .star-filled {
+  @apply text-yellow-400;
+}
+
+/* Product Card Hover Effects */
+.product-card {
+  @apply transition-transform duration-300;
+}
+
+.product-card:hover {
+  @apply transform -translate-y-1 shadow-lg;
+}
+
+/* Animate page transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+body {
+  @apply bg-gray-100;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} 
